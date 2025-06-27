@@ -13,4 +13,4 @@ class TestMultiplication(unittest.TestCase):
 test_multiplication = unittest.TestLoader().loadTestsFromTestCase(TestMultiplication)  # On charge les tests depuis la classe
  
 # Exécution du test
-unittest.TextTestRunner().run(TestMultiplication)        
+unittest.TextTestRunner().run(test_multiplication)        
