@@ -1,16 +1,23 @@
 import unittest
 
-class TestMultiplication(unittest.TestCase):
-        def test_multiplication(self):
-    # Assertions pour vérifier si le résultat est conforme à ce qui est attendu
-         self.assertEqual(multiplication(1, 3), 3)
-         self.assertEqual(multiplication(2, 8), 16)
-         self.assertEqual(multiplication(4, 3), 12)
+# Fonction à tester
+def puissance(a, b):
+    return a ** b
 
-         self.assertEqual(multiplication(0, 5), 0)
-         self.assertEqual(multiplication(5, 0), 0)
- # Définition d'un objet test
-test_multiplication = unittest.TestLoader().loadTestsFromTestCase(TestMultiplication)  # On charge les tests depuis la classe
- 
+# Classe de test
+class TestPuissance(unittest.TestCase):
+    def test_puissance(self):
+        # Assertions pour vérifier si le résultat est conforme à ce qui est attendu
+        self.assertEqual(puissance(2, 3), 8)
+        self.assertEqual(puissance(5, 2), 25)
+        self.assertEqual(puissance(9, 1), 9)
+        self.assertEqual(puissance(10, 0), 1)
+        self.assertEqual(puissance(0, 3), 0)
+        self.assertEqual(puissance(2, -2), 0.25)
+        self.assertEqual(puissance(-3, 3), -27)
+
+# Définition d'un objet test
+test_puissance = unittest.TestLoader().loadTestsFromTestCase(TestPuissance)
+
 # Exécution du test
-unittest.TextTestRunner().run(test_multiplication)        
+unittest.TextTestRunner().run(test_puissance)
